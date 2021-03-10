@@ -11,11 +11,29 @@
     <title>Register page</title>
 </head>
 <body>
-    <form style="border: 1px black dotted">
-        Name: <input type="text" name="name"/> <br/>
-        Family: <input type="text" name="family"/> <br/>
-        Age: <input type="text" name="age"/> <br/>
-        <input type="submit" value="Register"/>
+    <form style="border: 1px black dotted" action="/student-register.do" method="post">
+        <table>
+            <tr>
+                <td>Name: </td>
+                <td><input type="text" name="name"/> <br/></td>
+            </tr>
+
+            <tr>
+                <td>Family:</td>
+                <td><input type="text" name="family"/> <br/></td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="text" name="age"/> <br/></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Register"/></td>
+            </tr>
+        </table>
+
+
+
+
     </form>
 </body>
 </html>
