@@ -1,10 +1,10 @@
-package com.mapsa.service;
+package com.mapsa.dao;
 
 import com.mapsa.model.Student;
 
 import java.sql.SQLException;
 
-public interface StudentService {
+public interface StudentDAO {
 
     void save(Student student) throws SQLException;
 }
