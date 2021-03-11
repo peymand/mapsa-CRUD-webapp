@@ -29,7 +29,7 @@ public class RegisterController extends HttpServlet {
         String family = req.getParameter("family");
         String ageStr = req.getParameter("age");
         String studentId = generateUniqueID();
-        Student st = new Student(Integer.parseInt(ageStr),name,family,studentId);
+        Student st = new Student(0,Integer.parseInt(ageStr),name,family,studentId);
         try {
             studentService.save(st);
         } catch (SQLException e) {
@@ -39,6 +39,7 @@ public class RegisterController extends HttpServlet {
     }
 
     private String generateUniqueID() {
+        //TODO: adding some logic to make student number 6 chars
         SecureRandom random = new SecureRandom();
         int i =  random.nextInt(1_000_000);
         return String.valueOf(i);
