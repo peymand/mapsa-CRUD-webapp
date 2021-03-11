@@ -58,9 +58,12 @@ public class StudentDAOImpl implements StudentDAO {
     @Override
     public void delete(int id) throws SQLException{
 
+
         PreparedStatement ps = connection.prepareStatement("delete from student where id = ?");
         ps.setInt(1,id);
         ps.executeUpdate();
+
+        throw new SQLException();
 
     }
 }

@@ -11,7 +11,7 @@ public class StudentServiceImpl implements StudentService {
 
     StudentDAO studentDAO;
 
-    public StudentServiceImpl(){
+    public StudentServiceImpl() {
         studentDAO = new StudentDAOImpl();
     }
 

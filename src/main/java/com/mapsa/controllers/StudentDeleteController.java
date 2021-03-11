@@ -26,9 +26,9 @@ public class StudentDeleteController extends HttpServlet {
         String id =  req.getParameter("id");
         try {
             studentService.delete(Integer.parseInt(id));
-            resp.sendRedirect("/list-page.do");
+            resp.sendRedirect(req.getContextPath() + "/list-page.do");
         } catch (SQLException e) {
-            e.printStackTrace();
+            resp.sendRedirect("/error.do?code=101");
         }
     }
 }

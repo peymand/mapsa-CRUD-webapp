@@ -32,7 +32,7 @@ public class StudentListController extends HttpServlet {
                     forward(req,resp);
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            resp.sendRedirect("/error.do?code=101");
         }
 
     }
