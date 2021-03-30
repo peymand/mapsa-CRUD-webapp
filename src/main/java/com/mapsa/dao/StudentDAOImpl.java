@@ -18,7 +18,7 @@ public class StudentDAOImpl implements StudentDAO {
             e.printStackTrace();
         }
         try {
-              connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","123456");
+              connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1988");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -28,11 +28,11 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public void save(Student student) throws SQLException {
-        PreparedStatement ps = connection.prepareStatement("INSERT into student (age,name,family,sid) values (?,?,?,?)");
-        ps.setInt(1, student.getAge());
+        PreparedStatement ps = connection.prepareStatement("INSERT into student (sid,name,family,age) values (?,?,?,?)");
+        ps.setString(1, student.getSid());
         ps.setString(2, student.getName());
         ps.setString(3, student.getFamily());
-        ps.setString(4, student.getSid());
+        ps.setInt(4, student.getAge());
         ps.executeUpdate();
     }
 
@@ -45,10 +45,10 @@ public class StudentDAOImpl implements StudentDAO {
         while (resultSet.next()){
             Student student = new Student();
             student.setId(resultSet.getInt("id"));
-            student.setAge(resultSet.getInt("age"));
+            student.setSid(resultSet.getString("sid"));
             student.setName(resultSet.getString("name"));
             student.setFamily(resultSet.getString("family"));
-            student.setSid(resultSet.getString("sid"));
+            student.setAge(resultSet.getInt("age"));
             students.add(student);
         }
         return students;
@@ -62,8 +62,6 @@ public class StudentDAOImpl implements StudentDAO {
         PreparedStatement ps = connection.prepareStatement("delete from student where id = ?");
         ps.setInt(1,id);
         ps.executeUpdate();
-
-        throw new SQLException();
 
     }
 }
