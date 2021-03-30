@@ -1,0 +1,69 @@
+.btn{
+  width: fit-content;
+  padding: 5px 10px;
+  background-color: lightgreen;
+  color: white;
+  margin: 5px;
+
+  border-radius: 2px;
+}
+.btn{
+  text-decoration: none;
+}
+.btn:hover{
+  box-shadow: lightgray -2px -2px 2px;
+}
+.btn:active{
+  box-shadow: none;
+  color: #9e9e9e;
+}
+.body{
+  display: flex;
+  flex-direction: column;
+}
+.heading{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 40px;
+}
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tbl-student-list{
+  border: black;
+  border-width: thin;
+  border-style: groove;
+}
+.tbl-student-list-head{
+  background-color: lightcoral;
+}
+.tbl-student-list-rows{
+  height: 40px;
+}
+.tbl-student-list-cls{
+  padding: 3px 5px;
+}
+.tbl-student-list-btn{
+  background-color: lightcoral !important;
+}
+.register-form{
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  box-shadow: #9e9e9e 2px 2px 4px;
+}
+.register-form-btn-holder{
+  text-align: center;
+}
+.register-form-btn{
+  margin-top: 10px;
+}
+.register-form-cells{
+  margin:5px 2px;
+}
