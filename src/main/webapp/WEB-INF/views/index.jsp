@@ -11,19 +11,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="/style/style.css">
     <title>Home Page</title>
-    <style>
-        a {
-            font-weight: bold;
-
-        }
-    </style>
 </head>
-<body>
-    <h1>Student Home Page</h1> <br/>
-
-    <a href="<c:url value="/list-page.do"/>">List of Students</a> <br/>
-    <a href="/register.do">Register a Student</a> <br/>
-    <a href="">Search</a> <br/>
+<body class="body">
+<h1>Student Home Page</h1>
+<div class="heading">
+    <a class="btn" href="<c:url value="/list-page.do"/>">List of Students</a>
+    <a class="btn" href="/register.do">Register a Student</a>
+    <a class="btn" href="">Search</a>
+</div>
 </body>
 </html>
