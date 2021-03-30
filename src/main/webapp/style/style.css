@@ -4,14 +4,13 @@
   background-color: lightgreen;
   color: white;
   margin: 5px;
-
   border-radius: 2px;
 }
 .btn{
   text-decoration: none;
 }
 .btn:hover{
-  box-shadow: lightgray -2px -2px 2px;
+  box-shadow: lightblue -2px -2px 2px;
 }
 .btn:active{
   box-shadow: none;
@@ -39,7 +38,7 @@
   border-style: groove;
 }
 .tbl-student-list-head{
-  background-color: lightcoral;
+  background-color: #f4f7fa;
 }
 .tbl-student-list-rows{
   height: 40px;
@@ -48,7 +47,7 @@
   padding: 3px 5px;
 }
 .tbl-student-list-btn{
-  background-color: lightcoral !important;
+  background-color: lightgreen !important;
 }
 .register-form{
   width: fit-content;
@@ -56,7 +55,7 @@
   padding: 10px;
   background-color: #FFFFFF;
   border-radius: 3px;
-  box-shadow: #9e9e9e 2px 2px 4px;
+  box-shadow: lightblue 2px 2px 4px;
 }
 .register-form-btn-holder{
   text-align: center;
@@ -66,4 +65,23 @@
 }
 .register-form-cells{
   margin:5px 2px;
+}
+.tbl-search{
+  padding: 20px;
+  border-radius: 7px;
+  box-shadow: lightblue 2px 2px 5px;
+  background-color: #f4f7fa;
+}
+.tbl-search-input{
+  border: none;
+  height: 30px;
+}
+.tbl-search-input-selector{
+  height: 30px;
+  border:none;
+}
+.tbl-search-input-btn {
+  height: 30px;
+  border: none;
+  background-color: #daf1fc;
 }

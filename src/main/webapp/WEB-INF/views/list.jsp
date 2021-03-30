@@ -22,9 +22,10 @@
 <body class="body">
     <h1>Student Home Page</h1>
 <div class="heading">
+    <a class="btn" href="/index.do"/>Home</a>
     <a class="btn" href="<c:url value="/list-page.do"/>">List of Students</a>
     <a class="btn" href="/register.do">Register a Student</a>
-    <a class="btn" href="">Search</a>
+    <a class="btn" href="/search.do">Search</a>
 </div>
 <div class="container">
     <table class="tbl-student-list">
@@ -48,7 +49,8 @@
                 <td class="tbl-student-list-cls">${student.age}</td>
                 <td class="tbl-student-list-cls">${student.sid}</td>
                 <td class="tbl-student-list-cls"><a class="btn tbl-student-list-btn" href="">Edit</a>
-                    <a class="btn tbl-student-list-btn" href="/delete.do?id=${student.id}">Delete</a></td>
+                    <a class="btn tbl-student-list-btn" href="/delete.do?id=${student.id}">Delete</a>
+                </td>
             </tr>
         </c:forEach>
         </tbody>

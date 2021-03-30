@@ -17,9 +17,10 @@
 <body class="body">
 <h1>Student Home Page</h1>
 <div class="heading">
+    <a class="btn" href="/index.do"/>Home</a>
     <a class="btn" href="<c:url value="/list-page.do"/>">List of Students</a>
     <a class="btn" href="/register.do">Register a Student</a>
-    <a class="btn" href="">Search</a>
+    <a class="btn" href="/search.do">Search</a>
 </div>
 </body>
 </html>
