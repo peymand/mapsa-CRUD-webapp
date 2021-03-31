@@ -39,9 +39,8 @@ public class RegisterController extends HttpServlet {
     }
 
     private String generateUniqueID() {
-        //TODO: adding some logic to make student number 6 chars
         SecureRandom random = new SecureRandom();
-        int i =  random.nextInt(1_000_000);
+        int i =  random.nextInt(999999 - 100000) + 100000;
         return String.valueOf(i);
     }
 }
