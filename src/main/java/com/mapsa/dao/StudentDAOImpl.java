@@ -29,7 +29,8 @@ public class StudentDAOImpl implements StudentDAO {
 
   @Override
   public void save(Student student) throws SQLException {
-    PreparedStatement ps = connection.prepareStatement("INSERT into student (sid,name,family,age) values (?,?,?,?)");
+    PreparedStatement ps = connection
+      .prepareStatement("INSERT into student (sid,name,family,age) values (?,?,?,?)");
     ps.setString(1, student.getSid());
     ps.setString(2, student.getName());
     ps.setString(3, student.getFamily());
@@ -65,7 +66,8 @@ public class StudentDAOImpl implements StudentDAO {
 
   @Override
   public List<Student> searchName(String name) throws SQLException {
-    PreparedStatement preparedStatement=connection.prepareStatement("SELECT * FROM student WHERE name=?");
+    PreparedStatement preparedStatement=connection
+      .prepareStatement("SELECT * FROM student WHERE name=?");
     preparedStatement.setString(1, name);
     ResultSet resultSet = preparedStatement.executeQuery();
     List<Student> students=new ArrayList<>();
@@ -83,7 +85,8 @@ public class StudentDAOImpl implements StudentDAO {
 
   @Override
   public List<Student> searchFamily(String family) throws SQLException {
-    PreparedStatement preparedStatement=connection.prepareStatement("SELECT * FROM student WHERE family=?");
+    PreparedStatement preparedStatement=connection
+      .prepareStatement("SELECT * FROM student WHERE family=?");
     preparedStatement.setString(1, family);
     ResultSet resultSet = preparedStatement.executeQuery();
     List<Student> students=new ArrayList<>();
@@ -101,7 +104,8 @@ public class StudentDAOImpl implements StudentDAO {
 
   @Override
   public List<Student> searchId(int id) throws SQLException {
-    PreparedStatement preparedStatement=connection.prepareStatement("SELECT * FROM student WHERE id=?");
+    PreparedStatement preparedStatement=connection
+      .prepareStatement("SELECT * FROM student WHERE id=?");
     preparedStatement.setInt(1, id);
     ResultSet resultSet = preparedStatement.executeQuery();
     List<Student> students=new ArrayList<>();
@@ -119,7 +123,8 @@ public class StudentDAOImpl implements StudentDAO {
 
   @Override
   public List<Student> searchSId(String SId) throws SQLException {
-    PreparedStatement preparedStatement=connection.prepareStatement("SELECT * FROM student WHERE sid=?");
+    PreparedStatement preparedStatement=connection
+      .prepareStatement("SELECT * FROM student WHERE sid=?");
     preparedStatement.setString(1, SId);
     ResultSet resultSet = preparedStatement.executeQuery();
     List<Student> students=new ArrayList<>();
@@ -137,7 +142,8 @@ public class StudentDAOImpl implements StudentDAO {
 
   @Override
   public List<Student> searchAge(int age) throws SQLException {
-    PreparedStatement preparedStatement=connection.prepareStatement("SELECT * FROM student WHERE age=?");
+    PreparedStatement preparedStatement=connection
+      .prepareStatement("SELECT * FROM student WHERE age=?");
     preparedStatement.setInt(1, age);
     ResultSet resultSet = preparedStatement.executeQuery();
     List<Student> students=new ArrayList<>();
@@ -151,5 +157,16 @@ public class StudentDAOImpl implements StudentDAO {
       students.add(student);
     }
     return students;
+  }
+
+  @Override
+  public boolean updateStudent(Student student) throws SQLException {
+    PreparedStatement ps = connection
+      .prepareStatement("UPDATE student SET name = ?, family = ?, age=? WHERE id=?");
+    ps.setString(1, student.getName());
+    ps.setString(2, student.getFamily());
+    ps.setInt(3, student.getAge());
+    ps.setInt(4, student.getId());
+    return ps.execute();
   }
 }

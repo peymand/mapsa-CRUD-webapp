@@ -12,12 +12,6 @@
 <head>
     <title>List of Students</title>
     <link rel="stylesheet" href="/style/style.css">
-    <style>
-      td, th {
-        font-family: sans-serif;
-        font-size: large;
-      }
-    </style>
 </head>
 <body class="body">
     <h1>Student Home Page</h1>
@@ -43,13 +37,13 @@
         <c:forEach items="${arr}" var="student">
 
             <tr class="tbl-student-list-rows" style="border: 1px solid ; padding: 1px">
-                <td class="tbl-student-list-cls">${student.id}</td>
-                <td class="tbl-student-list-cls">${student.name}</td>
-                <td class="tbl-student-list-cls">${student.family}</td>
-                <td class="tbl-student-list-cls">${student.age}</td>
-                <td class="tbl-student-list-cls">${student.sid}</td>
-                <td class="tbl-student-list-cls"><a class="btn tbl-student-list-btn" href="">Edit</a>
-                    <a class="btn tbl-student-list-btn" href="/delete.do?id=${student.id}">Delete</a>
+                <td class="tbl-student-list-cls">${student.getId()}</td>
+                <td class="tbl-student-list-cls">${student.getName()}</td>
+                <td class="tbl-student-list-cls">${student.getFamily()}</td>
+                <td class="tbl-student-list-cls">${student.getAge()}</td>
+                <td class="tbl-student-list-cls">${student.getSid()}</td>
+                <td class="tbl-student-list-cls"><a class="btn tbl-student-list-btn" href="/register.do?operation=update&id=${student.getId()}">Edit</a>
+                    <a class="btn tbl-student-list-btn" href="/delete.do?id=${student.getId()}">Delete</a>
                 </td>
             </tr>
         </c:forEach>

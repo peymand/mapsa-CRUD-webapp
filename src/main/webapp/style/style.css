@@ -35,7 +35,10 @@
 .tbl-student-list{
   border: black;
   border-width: thin;
-  border-style: groove;
+  border-style: none;
+  background-color: #f4f7fa;
+  border-radius: 3px;
+  box-shadow: lightblue 2px 2px 4px;
 }
 .tbl-student-list-head{
   background-color: #f4f7fa;
@@ -45,6 +48,8 @@
 }
 .tbl-student-list-cls{
   padding: 3px 5px;
+  font-family: sans-serif;
+  font-size: large;
 }
 .tbl-student-list-btn{
   background-color: lightgreen !important;
@@ -53,7 +58,7 @@
   width: fit-content;
   height: fit-content;
   padding: 10px;
-  background-color: #FFFFFF;
+  background-color: #f4f7fa;
   border-radius: 3px;
   box-shadow: lightblue 2px 2px 4px;
 }
@@ -62,9 +67,12 @@
 }
 .register-form-btn{
   margin-top: 10px;
+  height: 30px;
 }
 .register-form-cells{
   margin:5px 2px;
+  font-family: sans-serif;
+  font-size: large;
 }
 .tbl-search{
   padding: 20px;

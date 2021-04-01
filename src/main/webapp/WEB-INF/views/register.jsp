@@ -16,7 +16,7 @@
 <body class="body">
 <h1>Student Home Page</h1>
 <div class="heading">
-    <a class="btn" href="/index.do"/>home</a>
+    <a class="btn" href="/index.do"/>Home</a>
     <a class="btn" href="<c:url value='/list-page.do'/>">List of Students</a>
     <a class="btn" href="/register.do">Register a Student</a>
     <a class="btn" href="/search.do">Search</a>
@@ -24,22 +24,25 @@
 <div class="container">
     <span class="register-form">
     <form action="/student-register.do" method="post">
+        <input type="hidden" name="operation" value="${operation}">
+        <input type="hidden" name="sid" value="${student[0].getSid()}">
+        <input type="hidden" name="id" value="${student[0].getId()}">
         <table>
             <tr>
                 <td><p class="register-form-cells">Name:</p></td>
-                <td><input type="text" name="name"  class="register-form-cells" class="register-form-cells"/> <br/></td>
+                <td><input type="text" name="name"  value="${student[0].getName()}" class="register-form-cells" class="register-form-cells"/> <br/></td>
             </tr>
 
             <tr>
                 <td><p class="register-form-cells">Family:</p></td>
-                <td><input type="text" name="family" class="register-form-cells"/> <br/></td>
+                <td><input type="text" name="family" value="${student[0].getFamily()}" class="register-form-cells"/> <br/></td>
             </tr>
             <tr>
                 <td><p class="register-form-cells">Age:</p></td>
-                <td><input type="text" name="age" class="register-form-cells"/> <br/></td>
+                <td><input type="text" name="age" value="${student[0].getAge()}" class="register-form-cells"/> <br/></td>
             </tr>
             <tr>
-                <td colspan="2" class="register-form-btn-holder"><input type="submit" value="Register" class="register-form-btn"/></td>
+                <td colspan="2" class="register-form-btn-holder"><input type="submit" value="Save" class="register-form-btn"/></td>
             </tr>
         </table>
     </form>

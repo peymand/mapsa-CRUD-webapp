@@ -18,4 +18,5 @@ public interface StudentDAO {
   List<Student> searchId(int id) throws SQLException;
   List<Student> searchSId(String SId) throws SQLException;
   List<Student> searchAge(int age) throws SQLException;
+  boolean updateStudent(Student student) throws SQLException;
 }

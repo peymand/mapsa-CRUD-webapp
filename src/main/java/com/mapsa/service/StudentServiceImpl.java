@@ -54,4 +54,9 @@ public class StudentServiceImpl implements StudentService {
   public List<Student> searchAge(int age) throws SQLException {
     return studentDAO.searchAge(age);
   }
+
+  @Override
+  public boolean updateStudent(Student student) throws SQLException {
+    return studentDAO.updateStudent(student);
+  }
 }
