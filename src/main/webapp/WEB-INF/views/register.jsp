@@ -10,16 +10,29 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Register page</title>
     <link rel="stylesheet" href="/style/style.css">
+    <style>
+      html {
+        direction: ${messages.get("css_direction")};
+      }
+    </style>
 </head>
 <body class="body">
-<h1>Student Home Page</h1>
-<div class="heading">
-    <a class="btn" href="/index.do"/>Home</a>
-    <a class="btn" href="<c:url value='/list-page.do'/>">List of Students</a>
-    <a class="btn" href="/register.do">Register a Student</a>
-    <a class="btn" href="/search.do">Search</a>
+<div class="header">
+    <h1 class="title">${messages.get("register_page_title")}</h1>
+    <form action="<c:url value="/register.do"/>" method="get"><select name="lang">
+        <option>EN</option>
+        <option>FA</option>
+    </select>
+        <input type="submit" value="ok"></form>
+</div>
+<div class="menu">
+    <a class="btn" href="<c:url value="/index.do"/>${messages.get("url_suffix")}">${messages.get("menu_home_btn")}</a>
+    <a class="btn" href="<c:url value="/list-page.do"/>${messages.get("url_suffix")}">${messages.get("menu_studentlist_btn")}</a>
+    <a class="btn" href="<c:url value="/register.do"/>${messages.get("url_suffix")}">${messages.get("menu_register_student_btn")}</a>
+    <a class="btn" href="<c:url value="/search.do"/>${messages.get("url_suffix")}">${messages.get("menu_search_btn")}</a>
 </div>
 <div class="container">
     <span class="register-form">
@@ -29,20 +42,20 @@
         <input type="hidden" name="id" value="${student[0].getId()}">
         <table>
             <tr>
-                <td><p class="register-form-cells">Name:</p></td>
-                <td><input type="text" name="name"  value="${student[0].getName()}" class="register-form-cells" class="register-form-cells"/> <br/></td>
+                <td><p class="register-form-cells">${messages.get("name")}</p></td>
+                <td><input type="text" name="name" value="${student[0].getName()}" class="register-form-cells" class="register-form-cells"/> <br/></td>
             </tr>
 
             <tr>
-                <td><p class="register-form-cells">Family:</p></td>
+                <td><p class="register-form-cells">${messages.get("family")}</p></td>
                 <td><input type="text" name="family" value="${student[0].getFamily()}" class="register-form-cells"/> <br/></td>
             </tr>
             <tr>
-                <td><p class="register-form-cells">Age:</p></td>
+                <td><p class="register-form-cells">${messages.get("age")}</p></td>
                 <td><input type="text" name="age" value="${student[0].getAge()}" class="register-form-cells"/> <br/></td>
             </tr>
             <tr>
-                <td colspan="2" class="register-form-btn-holder"><input type="submit" value="Save" class="register-form-btn"/></td>
+                <td colspan="2" class="register-form-btn-holder"><input type="submit" value="${messages.get("register_page_btn_submit")}" class="register-form-btn"/></td><!--register_page_btn_save-->
             </tr>
         </table>
     </form>
@@ -50,3 +63,4 @@
 </div>
 </body>
 </html>
+

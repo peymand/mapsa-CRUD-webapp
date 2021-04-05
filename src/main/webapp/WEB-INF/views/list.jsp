@@ -10,27 +10,40 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>List of Students</title>
     <link rel="stylesheet" href="/style/style.css">
+    <style>
+      html {
+        direction: ${messages.get("css_direction")};
+      }
+    </style>
 </head>
 <body class="body">
-    <h1>Student Home Page</h1>
-<div class="heading">
-    <a class="btn" href="/index.do"/>Home</a>
-    <a class="btn" href="<c:url value="/list-page.do"/>">List of Students</a>
-    <a class="btn" href="/register.do">Register a Student</a>
-    <a class="btn" href="/search.do">Search</a>
+<div class="header">
+    <h1 class="title">${messages.get("lis_page_title")}</h1>
+    <form action="<c:url value="/list-page.do"/>" method="get"><select name="lang">
+        <option>EN</option>
+        <option>FA</option>
+    </select>
+        <input type="submit" value="ok"></form>
+</div>
+<div class="menu">
+    <a class="btn" href="<c:url value="/index.do"/>${messages.get("url_suffix")}">${messages.get("menu_home_btn")}</a>
+    <a class="btn" href="<c:url value="/list-page.do"/>${messages.get("url_suffix")}">${messages.get("menu_studentlist_btn")}</a>
+    <a class="btn" href="<c:url value="/register.do"/>${messages.get("url_suffix")}">${messages.get("menu_register_student_btn")}</a>
+    <a class="btn" href="<c:url value="/search.do"/>${messages.get("url_suffix")}">${messages.get("menu_search_btn")}</a>
 </div>
 <div class="container">
     <table class="tbl-student-list">
         <thead class="tbl-student-list-head">
         <tr style="border: 1px solid ; padding: 1px">
-            <th class="tbl-student-list-cls">ID</th>
-            <th class="tbl-student-list-cls">Name</th>
-            <th class="tbl-student-list-cls">Family</th>
-            <th class="tbl-student-list-cls">Age</th>
-            <th class="tbl-student-list-cls">SID</th>
-            <th class="tbl-student-list-cls">Actions</th>
+            <th class="tbl-student-list-cls">${messages.get("id")}</th>
+            <th class="tbl-student-list-cls">${messages.get("name")}</th>
+            <th class="tbl-student-list-cls">${messages.get("family")}</th>
+            <th class="tbl-student-list-cls">${messages.get("age")}</th>
+            <th class="tbl-student-list-cls">${messages.get("sid")}</th>
+            <th class="tbl-student-list-cls">${messages.get("list_tbl_head_action")}</th>
         </tr>
         </thead>
         <tbody>
@@ -42,8 +55,9 @@
                 <td class="tbl-student-list-cls">${student.getFamily()}</td>
                 <td class="tbl-student-list-cls">${student.getAge()}</td>
                 <td class="tbl-student-list-cls">${student.getSid()}</td>
-                <td class="tbl-student-list-cls"><a class="btn tbl-student-list-btn" href="/register.do?operation=update&id=${student.getId()}">Edit</a>
-                    <a class="btn tbl-student-list-btn" href="/delete.do?id=${student.getId()}">Delete</a>
+                <td class="tbl-student-list-cls">
+                    <a class="btn tbl-student-list-btn" href="/register.do?operation=update&id=${student.getId()}&${messages.get("url_suffix")}">${messages.get("list_tbl_btn_edit")}</a>
+                    <a class="btn tbl-student-list-btn" href="/delete.do?id=${student.getId()}&${messages.get("url_suffix")}">${messages.get("list_tbl_btn_delete")}</a>
                 </td>
             </tr>
         </c:forEach>

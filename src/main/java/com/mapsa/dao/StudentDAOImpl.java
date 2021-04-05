@@ -20,7 +20,7 @@ public class StudentDAOImpl implements StudentDAO {
       e.printStackTrace();
     }
     try {
-      connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "1988");
+      connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?useUnicode=yes&characterEncoding=UTF-8", "root", "1988");
     } catch (SQLException e) {
       e.printStackTrace();
     }

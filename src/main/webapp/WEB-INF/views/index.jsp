@@ -11,16 +11,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="/style/style.css">
     <title>Home Page</title>
+    <style>
+      html{
+        direction: ${messages.get("css_direction")};
+      }
+    </style>
 </head>
 <body class="body">
-<h1>Student Home Page</h1>
-<div class="heading">
-    <a class="btn" href="/index.do"/>Home</a>
-    <a class="btn" href="<c:url value="/list-page.do"/>">List of Students</a>
-    <a class="btn" href="/register.do">Register a Student</a>
-    <a class="btn" href="/search.do">Search</a>
+<div class="header">
+    <h1 class="title">${messages.get("home_page_title")}</h1>
+    <form action="<c:url value="/index.do"/>" method="get"><select name="lang">
+        <option>EN</option>
+        <option>FA</option>
+    </select>
+        <input type="submit" value="ok"></form>
+</div>
+<div class="menu">
+    <a class="btn" href="<c:url value="/index.do"/>${messages.get("url_suffix")}">${messages.get("menu_home_btn")}</a>
+    <a class="btn" href="<c:url value="/list-page.do"/>${messages.get("url_suffix")}">${messages.get("menu_studentlist_btn")}</a>
+    <a class="btn" href="<c:url value="/register.do"/>${messages.get("url_suffix")}">${messages.get("menu_register_student_btn")}</a>
+    <a class="btn" href="<c:url value="/search.do"/>${messages.get("url_suffix")}">${messages.get("menu_search_btn")}</a>
 </div>
 </body>
 </html>
